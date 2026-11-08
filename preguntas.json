@@ -10,10 +10,20 @@
   },
   {
     "enunciado": "¿Cuál es la capital de Japón?",
+    "capital": "capital",
     "opciones": [
       { "valor": "Seúl", "correcta": false },
       { "valor": "Tokio", "correcta": true },
       { "valor": "Pekín", "correcta": false }
+    ]
+  },
+  {
+    "enunciado": "¿Qué país es el que aparece resaltado en el mapa?",
+    "rutaImagenMapa": "mapas/alemania.png",
+    "opciones": [
+      { "valor": "Alemania", "correcta": true },
+      { "valor": "México", "correcta": false },
+      { "valor": "Países Bajos", "correcta": false }
     ]
   }
 ]
