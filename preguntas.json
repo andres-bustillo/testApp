@@ -1,0 +1,19 @@
+[
+  {
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/mexico.png",
+    "opciones": [
+      { "valor": "Argentina", "correcta": false },
+      { "valor": "México", "correcta": true },
+      { "valor": "España", "correcta": false }
+    ]
+  },
+  {
+    "enunciado": "¿Cuál es la capital de Japón?",
+    "opciones": [
+      { "valor": "Seúl", "correcta": false },
+      { "valor": "Tokio", "correcta": true },
+      { "valor": "Pekín", "correcta": false }
+    ]
+  }
+]
