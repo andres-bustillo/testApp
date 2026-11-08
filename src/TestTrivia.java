@@ -2,6 +2,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.FileReader;
 import java.lang.reflect.Type;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -62,6 +63,8 @@ public class TestTrivia {
         Scanner scanner = new Scanner(System.in);
         int puntaje = 0;
 
+        Collections.shuffle(listaPreguntas);
+
         for (int i = 0; i < listaPreguntas.size(); i++) {
             PreguntaBandera p = listaPreguntas.get(i);
             
@@ -74,6 +77,8 @@ public class TestTrivia {
 
             // Mostrar opciones numeradas
             List<Opcion> opciones = p.getOpciones();
+            Collections.shuffle(opciones);
+            
             for (int j = 0; j < opciones.size(); j++) {
                 System.out.println("  (" + (j + 1) + ") " + opciones.get(j).getValor());
             }
