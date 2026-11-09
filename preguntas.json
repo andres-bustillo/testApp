@@ -1,5 +1,6 @@
 [
   {
+    "tipo": "bandera",
     "enunciado": "¿A qué país pertenece esta bandera?",
     "rutaImagenBandera": "banderas/mexico.png",
     "opciones": [
@@ -9,6 +10,7 @@
     ]
   },
   {
+    "tipo": "capital",
     "enunciado": "¿Cuál es la capital de Japón?",
     "capital": "capital",
     "opciones": [
@@ -18,6 +20,7 @@
     ]
   },
   {
+    "tipo": "mapa",
     "enunciado": "¿Qué país es el que aparece resaltado en el mapa?",
     "rutaImagenMapa": "mapas/alemania.png",
     "opciones": [

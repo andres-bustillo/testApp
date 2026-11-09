@@ -1,7 +1,11 @@
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.io.FileReader;
-import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -16,19 +20,38 @@ import java.util.Scanner;
 public class TestTrivia {
     public static void main(String[] args) {
         Gson gson = new Gson();
-        List<Pregunta> listaPreguntas = null;
+        List<Pregunta> listaPreguntas = new ArrayList<>();
 
         // Leer el archivo JSON
-        try (FileReader reader = new FileReader("preguntas.json")) {
-            Type listType = new TypeToken<List<PreguntaBandera>>(){}.getType();
-            listaPreguntas = gson.fromJson(reader, listType);
-            System.out.println("¡Datos cargados con éxito desde el JSON!\n");
+
+        try { 
+            FileReader reader = new FileReader("preguntas.json");
+            JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
+
+            for(JsonElement element : jsonArray) {
+                JsonObject obj = element.getAsJsonObject();
+                String tipo = obj.get("tipo").getAsString();
+                switch(tipo) {
+                    case "bandera":
+                        PreguntaBandera pB = gson.fromJson(obj, PreguntaBandera.class);
+                        listaPreguntas.add(pB);
+                        break;
+                    case "capital":
+                        PreguntaCapital pC = gson.fromJson(obj, PreguntaCapital.class);
+                        listaPreguntas.add(pC);
+                        break;
+                    case "mapa":
+                        PreguntaMapa pM = gson.fromJson(obj, PreguntaMapa.class);
+                        listaPreguntas.add(pM);
+                        break;
+                }
+            }
         } catch (Exception e) {
-            System.out.println("Error al leer el archivo JSON: " + e.getMessage());
-            return;
+            System.out.println(e.getMessage());
         }
 
-        // Simular el juego en la terminal
+
+
         Scanner scanner = new Scanner(System.in);
         int puntaje = 0;
         int counter = 1;
@@ -73,40 +96,6 @@ public class TestTrivia {
 
             counter++;
         }
-
-        // for (int i = 0; i < listaPreguntas.size(); i++) {
-        //     PreguntaBandera p = (PreguntaBandera) listaPreguntas.get(i);
-            
-        //     System.out.println("Pregunta " + (i + 1) + ": " + p.getEnunciado());
-            
-        //     // Si la pregunta tiene imagen, aquí simularíamos mostrarla en JavaFX
-        //     if (p.getRutaImagenBandera() != null) {
-        //         System.out.println("[Imagen de la bandera: " + p.getRutaImagenBandera() + "]");
-        //     }
-
-        //     // Mostrar opciones numeradas
-        //     List<Opcion> opciones = p.getOpciones();
-        //     Collections.shuffle(opciones);
-
-        //     for (int j = 0; j < opciones.size(); j++) {
-        //         System.out.println("  (" + (j + 1) + ") " + opciones.get(j).getValor());
-        //     }
-
-        //     System.out.print("Elige tu opción (número): ");
-        //     int respuestaUsuario = scanner.nextInt() - 1;
-
-        //     // Validar si la respuesta es correcta
-        //     if (respuestaUsuario >= 0 && respuestaUsuario < opciones.size()) {
-        //         if (opciones.get(respuestaUsuario).isCorrecta()) {
-        //             System.out.println("¡Correcto! 🎉\n");
-        //             puntaje++;
-        //         } else {
-        //             System.out.println("Incorrecto. ❌\n");
-        //         }
-        //     } else {
-        //         System.out.println("Opción inválida.\n");
-        //     }
-        // }
 
         System.out.println("Fin del test. Tu puntaje final es: " + puntaje + "/" + listaPreguntas.size());
         scanner.close();
