@@ -28,5 +28,105 @@
       { "valor": "México", "correcta": false },
       { "valor": "Países Bajos", "correcta": false }
     ]
+  },
+  {
+    "tipo": "bandera",
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/francia.png",
+    "opciones": [
+      { "valor": "Italia", "correcta": false },
+      { "valor": "Francia", "correcta": true },
+      { "valor": "Rusia", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "capital",
+    "enunciado": "¿Cuál es la capital de Canadá?",
+    "capital": "Ottawa",
+    "opciones": [
+      { "valor": "Toronto", "correcta": false },
+      { "valor": "Ottawa", "correcta": true },
+      { "valor": "Vancouver", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "mapa",
+    "enunciado": "¿Qué país es el que aparece resaltado en el mapa?",
+    "rutaImagenMapa": "mapas/brasil.png",
+    "opciones": [
+      { "valor": "Brasil", "correcta": true },
+      { "valor": "Argentina", "correcta": false },
+      { "valor": "Colombia", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "bandera",
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/japon.png",
+    "opciones": [
+      { "valor": "Corea del Sur", "correcta": false },
+      { "valor": "Japón", "correcta": true },
+      { "valor": "China", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "capital",
+    "enunciado": "¿Cuál es la capital de Australia?",
+    "capital": "Canberra",
+    "opciones": [
+      { "valor": "Sídney", "correcta": false },
+      { "valor": "Melbourne", "correcta": false },
+      { "valor": "Canberra", "correcta": true }
+    ]
+  },
+  {
+    "tipo": "mapa",
+    "enunciado": "¿Qué país es el que aparece resaltado en el mapa?",
+    "rutaImagenMapa": "mapas/italia.png",
+    "opciones": [
+      { "valor": "Grecia", "correcta": false },
+      { "valor": "Italia", "correcta": true },
+      { "valor": "España", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "bandera",
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/argentina.png",
+    "opciones": [
+      { "valor": "Uruguay", "correcta": false },
+      { "valor": "Argentina", "correcta": true },
+      { "valor": "Chile", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "capital",
+    "enunciado": "¿Cuál es la capital de Egipto?",
+    "capital": "El Cairo",
+    "opciones": [
+      { "valor": "Alejandría", "correcta": false },
+      { "valor": "El Cairo", "correcta": true },
+      { "valor": "Luxor", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "mapa",
+    "enunciado": "¿Qué país es el que aparece resaltado en el mapa?",
+    "rutaImagenMapa": "mapas/india.png",
+    "opciones": [
+      { "valor": "India", "correcta": true },
+      { "valor": "Pakistán", "correcta": false },
+      { "valor": "Bangladés", "correcta": false }
+    ]
+  },
+  {
+    "tipo": "bandera",
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/brasil.png",
+    "opciones": [
+      { "valor": "Brasil", "correcta": true },
+      { "valor": "Portugal", "correcta": false },
+      { "valor": "Colombia", "correcta": false }
+    ]
   }
 ]
