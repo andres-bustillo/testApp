@@ -128,5 +128,15 @@
       { "valor": "Portugal", "correcta": false },
       { "valor": "Colombia", "correcta": false }
     ]
+  },
+  {
+    "tipo": "bandera",
+    "enunciado": "¿A qué país pertenece esta bandera?",
+    "rutaImagenBandera": "banderas/ghana.png",
+    "opciones": [
+      { "valor": "Italia", "correcta": false },
+      { "valor": "Ghana", "correcta": true },
+      { "valor": "Rusia", "correcta": false }
+    ]
   }
 ]
